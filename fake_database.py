@@ -13,7 +13,8 @@ def russian(a,b):
 	while x > 0:  						# While loop begins
 		if x % 2 == 1: z += y 			# Modulo operator
 		y = y << 1 						# Shift binary over to left = multiply with 2
-		x = x >> 1 						# Shift binary over to right = divide by 2
+		x = x >> 1
+	print "Hit DB" 						# Shift binary over to right = divide by 2
 	return z							# Return z
 	 							
 

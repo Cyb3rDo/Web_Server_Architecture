@@ -5,7 +5,7 @@ import fake_database
 CACHE = {}
 
 def printName():
-	print str(__name__)
+	return str(__name__)
 
 def updateLastMultiplied(a,b, result):
 	key = 'lastFive'
@@ -29,24 +29,21 @@ def updateLastMultiplied(a,b, result):
 def lastMultipliedHandler():
 	key = 'lastFive'
 	if key in CACHE:
-		print "Last 5 = {}".format(CACHE[key])
-		print "-"*8
-		print " "
+		return "Last 5 = {}".format(CACHE[key])
 	else:
-		print "Russian not Used Before"
-		print "-"*8
-		print " "
+		return "Russian not Used Before"
+		
 
 def multiplyHandler(a,b):
 	
 	cacheKey = (a,b)
 	if cacheKey in CACHE:
-		print CACHE[cacheKey]
+		return CACHE[cacheKey]
 	else:
 		result = fake_database.russian(a,b)
 		updateLastMultiplied(a,b,result)
 		CACHE[cacheKey] = result
-		print 'Latest Result: {}'.format(result)
+		return 'Latest Result: {}'.format(result)
 		lastMultipliedHandler()
 
 

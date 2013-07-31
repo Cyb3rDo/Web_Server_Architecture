@@ -1,24 +1,48 @@
 #!/usr/bin/env python3
 
 # Server names
-import computer1
-import computer2
-import computer3
+SERVERS = ['APP1', 'APP2', 'APP3']
+#SERVERS = ['APP1', 'APP2', 'APP3', 'APP4', 'APP5', 'APP6', 'APP7']
 
-SERVERS = [computer1, computer2, computer3]
+# --Algoritm 1--
 
-n = -1
+# n = -1
+# def get_server():
+#  	global n
+#  	n += 1
+#  	return SERVERS[n % len(SERVERS)]
+
+# --Algoritm 2--
+
+# import itertools
+# ## Infinite loop iterator
+# cycle = itertools.cycle(SERVERS)
+# def get_server():
+# 	global cycle
+# 	return cycle.next()
+
+# --Algoritm 3--
 def get_server():
-	global n
-	n += 1
-	return SERVERS[n % len(SERVERS)]
+	try:
+		return next(get_server.s)
+	except StopIteration:
+		get_server.s = iter(SERVERS)
+		return next(get_server.s)
+setattr(get_server, 's', iter(SERVERS))
+
+# --Algoritm 4--
+# def get_server():
+# 	def f():
+# 		while True:
+# 			i = SERVERS.pop(0)
+# 			SERVERS.append(i)
+# 			yield i
+# 	return next(f())
+
+
 
 ## Testing load which needs balancing
 if __name__ == '__main__':
-	for i in range(3):
-		server = get_server()
-		print server.printName
-		print server.multiplyHandler
-		print server.lastMultipliedHandler
-		print " "
+	for i in range(9):
+		print get_server()
 
