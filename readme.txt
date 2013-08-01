@@ -10,4 +10,7 @@ Architecture include:
 - Database (--) --> Russian Peasant's Algoritm
 - Load Balancer (Algoritm)
 - Memcache (LiveJournal - 2003)
+	- set[key, value]
+	- get(key) --> value, None
+	- delete(key)
 
