@@ -26,9 +26,9 @@ if __name__ == '__main__':
 		##: Generate som 'Requested' numbers
 		#a = randint(5, 99)
 		#b = randint(5, 99)
-		z = randint(1,3)
-		a = [44,85,123][z%3]
-		b = [54,15,32][z%3]
+		z = randint(1,21)
+		a = [44,85,123,55,32,34,87][z%7]
+		b = [54,15,32,98,311,28,54][z%7]
 
 		# Run the load balancer algorithm to get us a computer
 		server = get_server()

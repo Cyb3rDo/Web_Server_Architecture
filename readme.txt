@@ -9,4 +9,5 @@ Architecture include:
 - App Computer (Modules)
 - Database (--) --> Russian Peasant's Algoritm
 - Load Balancer (Algoritm)
+- Memcache (LiveJournal - 2003)
 
